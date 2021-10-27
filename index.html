@@ -1,0 +1,147 @@
+<html>
+<head>
+    <meta charset="uft-8">
+    <title>Stile Zone Login form</title>
+    <script>
+        function validation()
+{
+    var First_name=document.getElementById("firstname").value;
+    var Last_name=document.getElementById("lastname").value;
+    var Email_id=document.getElementById("email").value;
+    var Age=document.getElementById("age").value;
+    var Username=document.getElementById("EntreUsername").value;
+    var Password=document.getElementById("EntrePassword").value;
+    console.log(First_name)
+    function letters(str) {
+      return str.length === 1 && str.match(/[0-9]/i);
+    }
+    function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+    if(letters(First_name))
+    {alert("SHOULD BE A CHARACTER");
+      console.log(!letters(First_name))}
+
+    else if(letters(Last_name))
+    {alert("SHOULD BE A CHARACTER")}
+
+    else if (!validateEmail(Email_id))
+	{alert('Invalid email')}
+
+    else
+    {alert("registeration successful")}
+}
+    </script>
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(bgimage.jpg);
+    background-size: cover;
+}
+.Register{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:rgb(255, 255, 255);
+    text-align: center;
+}
+.Register h1
+{
+    color: rgb(55, 252, 6);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.Register input[type="text"],.Register input[type="password"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    border: 2px solid #0367f0;
+    padding: 6px 2px ;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+.Register input[type="text"]:focus,.Register input[type="password"]:focus
+{
+    width: 270px;
+    border-color: rgb(184, 11, 175);
+}
+.Register input[type="button"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #17f003;
+    padding: 14px 35px ;
+    outline: none;
+    color: #17f003;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.Register input[type="button"]:hover
+{
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(184, 11, 175);
+    color: rgb(184, 11, 175);
+}
+.Register p{
+    border: 0;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    border: 2px solid #0367f0;
+    padding: 6px 2px ;
+    width: 250px;
+    outline: none;
+    color: rgb(94, 94, 94);
+    transition: 0.25px;
+}
+    </style>
+
+</head>
+<body>
+<form class="Register">
+<h1>Register</h1>
+<input type="text" required="required" size="15" placeholder="First_name" id="firstname" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Last_name" id="lastname" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Email_id" id="email" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Age" id="age" maxlength="2" /> 
+<input type="text" required="required" size="15" placeholder="set a username" id="EntreUsername" maxlength="30" /> 
+<input type="password" required="required" size="15"placeholder="set a password" id="EntrePassword" maxlength="30">
+<p>
+    Select your gender:- <br />
+    <input type="radio" value="male" >male
+    <input type="radio" value="female" >female
+    <input type="radio" value="other" >other
+</p>
+<p>
+    Select your age category:- <br />
+    <input type="checkbox" value="below 18" >below 18
+    <input type="checkbox" value="above 18" >above 18
+</p>
+<P>
+Select the device you are using :- <br />
+<select name="device">
+    <option value="phone">phone</option>
+    <option value="PC">PC</option>
+</select>
+</P>
+<p>date of birth:-<input type="date"/></p>
+<input type="button" onclick="validation()" size="15" value="signup">
+</form>
+</body>
+</html>
